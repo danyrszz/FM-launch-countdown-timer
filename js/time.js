@@ -3,7 +3,7 @@ import animate from './animate.js';
 
 export default class Time{
     constructor(secondsLbl, minutesLbl, hoursLbl, daysLbl){
-        this.days = 8;
+        this.days = 13;
         this.hours = 23;
         this.minutes = 59;
         this.seconds = 59;
