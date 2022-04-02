@@ -6,7 +6,7 @@ export default class Time{
         this.days = 8;
         this.hours = 23;
         this.minutes = 59;
-        this.seconds = 6;
+        this.seconds = 59;
         this.currentElement;
         this.secondsLbl = secondsLbl;
         this.minutesLbl = minutesLbl;
@@ -20,37 +20,44 @@ export default class Time{
     }
     run(){
         this.seconds--;
-        this.currentElement = this.s;
+        this.currentElement = [this.s];
 
-        if(this.seconds<0){
+        if(this.seconds<0){            
             this.seconds=59;
             this.minutes--;
-            this.currentElement = this.m;
+            this.currentElement = [this.m, this.s];
         }
         if(this.minutes===0 && this.seconds===0&&this.hours>0){
             this.hours--;
-            this.currentElement = this.h;
             this.minutes=59;
             this.seconds=59;
+            this.currentElement = [this.h,this.m, this.s];
         }
         if(this.hours===0 && this.minutes===0 && this.seconds===0 && this.days>0){
             this.days--;
-            this.currentElement = this.d;
             this.hours=23;
             this.minutes=59;
             this.seconds=59;
+            this.currentElement = [this.d,this.h,this.m, this.s];
+        }else{
         }
     }
     start(){
+        //init labels
+        this.s.printTopNumber(this.printSeconds());
+        this.m.printTopNumber(this.printMinutes());
+        this.h.printTopNumber(this.printHours());
+        this.d.printTopNumber(this.printDays());
+
         let timer = setInterval(()=>{
             this.run();
-            animate(this.currentElement);
+            //animate
+            this.currentElement.forEach(element => animate(element))
+
             this.s.printCurrentNumber(this.printSeconds());
             this.m.printCurrentNumber(this.printMinutes());
             this.h.printCurrentNumber(this.printHours());
             this.d.printCurrentNumber(this.printDays());
-            console.log(this.currentElement)
-            //animation
             if(this.days===0 && this.hours===0 && this.minutes ===0 && this.seconds===0){
                 clearInterval(timer);
             }

@@ -17,7 +17,7 @@ function animate(element){
         element.getBottom().style.transform = "perspective(500px) rotatex(0deg)";
         element.getBottom().style.transition = "transform 0s "
         if(flag){ clearInterval(s); }
-    }, 900);
+    }, 500);
 }
 
 export default animate;

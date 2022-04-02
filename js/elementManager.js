@@ -3,11 +3,12 @@ export default class ElementManager{
         this.element = element;
     }
     printCurrentNumber(number){
+        this.getBottomBack().textContent = (number).toLocaleString('en-US', {minimumIntegerDigits: 2});
+        this.getTopBack().textContent = (number).toLocaleString('en-US', {minimumIntegerDigits: 2});
+    }
+    printTopNumber(number){
         this.getTop().textContent = number;
         this.getBottom().textContent = number;
-        //check if number is less than 0
-        this.getBottomBack().textContent = (number-1).toLocaleString('en-US', {minimumIntegerDigits: 2});
-        this.getTopBack().textContent = (number-1).toLocaleString('en-US', {minimumIntegerDigits: 2});
     }
     getTop(){
         return this.element.querySelector(".top")
