@@ -26,15 +26,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshots/desktop-ss)
-![](./screenshots/ipad-ss)
-![](./screenshots/iphone-ss)
+![](./screenshots/desktop-ss.png)
+![](./screenshots/ipad-ss.png)
+![](./screenshots/iphone-ss.png)
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/danyrszz/FM-launch-countdown-timer)
+- Live Site URL: [Add live site URL here](https://danyrszz.github.io/FM-launch-countdown-timer/)
 
 ## My process
 
